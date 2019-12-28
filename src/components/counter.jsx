@@ -12,9 +12,11 @@ class Counter extends Component {
     render() {
         return (
             <React.Fragment>
-                <span className={this.getBagdeClasses()}>{this.formatCount()}</span>
-                <button className="btn btn-secondary btn-sm">Increment</button>
-                <ul>{this.getListOfTags()}</ul>
+                
+                <ul>
+                    {this.state.tags.length === 0 && 'please Create a new tag'}
+                    {this.getListOfTags()}
+                    </ul>
             </React.Fragment>
         );
     }
