@@ -15,11 +15,12 @@ class Counter extends Component {
     //     this.handleIncrement = this.handleIncrement.bind(this)
     // }
     handleIncrement = () => {
-        console.log('increment button', this)
+        this.setState({count: this.state.count +1})
     }
     render() {
         return (
             <React.Fragment>
+    <span className={this.getBagdeClasses()}>{this.formatCount()}</span>
                 <ul>
                     {this.state.tags.length === 0 && 'please Create a new tag'}
                     {this.getListOfTags()}
