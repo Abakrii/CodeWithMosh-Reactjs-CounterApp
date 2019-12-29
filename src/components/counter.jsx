@@ -14,18 +14,29 @@ class Counter extends Component {
     //     super();
     //     this.handleIncrement = this.handleIncrement.bind(this)
     // }
-    handleIncrement = () => {
-        this.setState({count: this.state.count +1})
+    handleIncrement = (product, test) => {
+        console.log('product', product)
+        console.log('test', test)
+        this.setState({ count: this.state.count + 1 })
+    }
+
+    doHandleIncrement = () =>{
+        this.handleIncrement({id:1})
     }
     render() {
         return (
             <React.Fragment>
-    <span className={this.getBagdeClasses()}>{this.formatCount()}</span>
+                <span className={this.getBagdeClasses()}>{this.formatCount()}</span>
                 <ul>
                     {this.state.tags.length === 0 && 'please Create a new tag'}
                     {this.getListOfTags()}
                 </ul>
-                <button onClick={this.handleIncrement} className={this.getBagdeClasses()}>Increment</button>
+                <button 
+                onClick={()=>this.handleIncrement({product:1}, {test:2})} 
+                className={this.getBagdeClasses()}
+                >
+                    Increment
+                    </button>
             </React.Fragment>
         );
     }
