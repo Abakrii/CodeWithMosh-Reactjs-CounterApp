@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = {
-        count: this.props.value,
+        value: this.props.value,
         tags: [
             'tag1',
             'tag2',
@@ -17,7 +17,7 @@ class Counter extends Component {
     handleIncrement = product => {
         console.log('product', product)
 
-        this.setState({ count: this.state.count + 1 })
+        this.setState({ value: this.state.value + 1 })
     }
 
     doHandleIncrement = () =>{
@@ -27,8 +27,9 @@ class Counter extends Component {
         console.log("props", this)
         return (
             <div>
+                {this.props.children}
                 <span className={this.getBagdeClasses()}>{this.formatCount()}</span>
-              
+
                 <button 
                 onClick={()=>this.handleIncrement({product:1})} 
                 className="btn btn-secondary btn-sm"
