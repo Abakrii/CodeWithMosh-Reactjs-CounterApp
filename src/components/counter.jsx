@@ -28,7 +28,7 @@ class Counter extends Component {
 //     this.handleIncrement({ id: 1 });
 //   };
   render() {
-    console.log("props", this.props);
+    console.log('counter is Rendered')
     return (
       <div>
         <span className={this.getBagdeClasses()}>{this.formatCount()}</span>

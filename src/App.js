@@ -5,6 +5,16 @@ import  Navbar from './components/navbar';
 import Counters from './components/counters';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    console.log('countstrunctor')
+  }
+  componentDidMount(){
+   
+    console.log('Component did Mount is Rendered')
+
+  }
+ 
   state = {
     counters: [
       { id: 1, value: 4 },
@@ -36,6 +46,8 @@ class App extends Component {
       console.log(counters,index)
   }
   render(){
+    console.log('Render Function is Rendered')
+
   return (
     <React.Fragment>
       <Navbar totalCounters={this.state.counters.filter(c => c.value > 0).length}/>
