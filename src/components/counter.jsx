@@ -1,32 +1,24 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-//   state = {
-//     value: this.props.counter.value,
-//     tags: ["tag1", "tag2", "tag3"],
-//     test: {
-//       test1: "ab",
-//       test2: "bc",
-//       test3: "cd"
-//     }
-//   };
 
-  // constructor() {
-  //     super();
-  //     this.handleIncrement = this.handleIncrement.bind(this)
-  // }
+  componentDidUpdate(prevProps, prevState){
+    console.log('prevProps', prevProps);
+   
+    if(prevProps.counter.value !== this.props.counter.value) {
+      // Ajax Call and get new data from the server
+    }
+
+  }
+
   handleIncrement = product => {
     console.log("product", product);
 
     this.setState({ value: this.state.value + 1 });
-    // for(let x in this.state.test) {
-    //     console.log(x)
-    // }
+   
   };
 
-//   doHandleIncrement = () => {
-//     this.handleIncrement({ id: 1 });
-//   };
+
   render() {
     console.log('counter is Rendered')
     return (
