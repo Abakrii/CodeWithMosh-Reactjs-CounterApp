@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-  state = {
-    value: this.props.counter.value,
-    tags: ["tag1", "tag2", "tag3"],
-    test: {
-      test1: "ab",
-      test2: "bc",
-      test3: "cd"
-    }
-  };
+//   state = {
+//     value: this.props.counter.value,
+//     tags: ["tag1", "tag2", "tag3"],
+//     test: {
+//       test1: "ab",
+//       test2: "bc",
+//       test3: "cd"
+//     }
+//   };
 
   // constructor() {
   //     super();
@@ -24,16 +24,17 @@ class Counter extends Component {
     // }
   };
 
-  doHandleIncrement = () => {
-    this.handleIncrement({ id: 1 });
-  };
+//   doHandleIncrement = () => {
+//     this.handleIncrement({ id: 1 });
+//   };
   render() {
     console.log("props", this.props);
     return (
       <div>
         <span className={this.getBagdeClasses()}>{this.formatCount()}</span>
         <button
-          onClick={() => this.handleIncrement({ product: 1 })}
+        onClick={()=>this.props.onIncrement(this.props.counter)}
+        //   onClick={() => this.handleIncrement({ product: 1 })}
           className="btn btn-secondary btn-sm"
         >
           Increment
@@ -52,11 +53,11 @@ class Counter extends Component {
 
   getBagdeClasses() {
     let classes = "badge m-2 badge-";
-    classes += this.state.value === 0 ? "warning" : "primary";
+    classes += this.props.counter.value === 0 ? "warning" : "primary";
     return classes;
   }
   formatCount() {
-    const { value } = this.state;
+    const { value } = this.props.counter;
     return value === 0 ? "zero" : value;
   }
 }
