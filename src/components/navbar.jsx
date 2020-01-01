@@ -2,7 +2,7 @@ import React from "react";
 
 
 const Navbar = ({totalCounters}) => {
-    console.log('Navbar is Rendered')
+    // console.log('Navbar is Rendered')
 
    
     return (    

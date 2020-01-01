@@ -7,17 +7,15 @@ import Counters from './components/counters';
 class App extends Component {
   constructor(props){
     super(props);
-    console.log('countstrunctor')
+    // console.log('countstrunctor')
   }
   componentDidMount(){
    
-    console.log('Component did Mount is Rendered')
+    // console.log('Component did Mount is Rendered')
 
   }
 
-  componentWillUnmount() {
-    console.log('unmouted component')
-  }
+ 
  
   state = {
     counters: [
@@ -47,10 +45,20 @@ class App extends Component {
       counters[index].value++;
       this.setState({counters})
 
-      console.log(counters,index)
+      // console.log(counters,index)
+  }
+  handleDecrement = counter =>{
+    const counters = [...this.state.counters];
+      const index = counters.indexOf(counter);
+      counters[index] = {...counter};
+      counters[index].value--;
+      this.setState({counters})
+
+      // console.log(counters,index)
+    console.log('this is handle decrement')
   }
   render(){
-    console.log('Render Function is Rendered')
+    // console.log('Render Function is Rendered')
 
   return (
     <React.Fragment>
@@ -61,6 +69,7 @@ class App extends Component {
           onDelete={this.handleDelete}
           onIncrement={this.handleIncrement}
           onReset={this.handelReset}
+          onDecrement={this.handleDecrement}
         />
 
       </main>
