@@ -14,6 +14,10 @@ class App extends Component {
     console.log('Component did Mount is Rendered')
 
   }
+
+  componentWillUnmount() {
+    console.log('unmouted component')
+  }
  
   state = {
     counters: [

@@ -10,6 +10,9 @@ class Counter extends Component {
     }
 
   }
+  componentWillUnmount() {
+    console.log('unmouted component')
+  }
 
   handleIncrement = product => {
     console.log("product", product);
